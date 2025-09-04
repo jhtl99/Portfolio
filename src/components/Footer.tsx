@@ -26,7 +26,7 @@ const Footer = () => {
                 onClick={scrollToTop}
                 variant="outline"
                 size="sm"
-                className="border-white/30 text-white hover:bg-white hover:text-primary mb-4"
+                className="border-white/30 text-black hover:bg-white hover:text-primary mb-4"
               >
                 <ArrowUp size={16} className="mr-2" />
                 Back to Top

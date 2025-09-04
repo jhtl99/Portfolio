@@ -28,21 +28,21 @@ const Contact = () => {
     {
       name: "Email",
       icon: Mail,
-      href: "mailto:jayden@example.com",
+      href: "mailto:jaydenl@andrew.cmu.edu",
       color: "text-red-500",
       description: "Drop me a line"
     },
     {
       name: "LinkedIn",
       icon: Linkedin,
-      href: "https://linkedin.com/in/jayden",
+      href: "https://linkedin.com/in/jaydenlin0",
       color: "text-blue-600",
       description: "Professional network"
     },
     {
       name: "GitHub",
       icon: Github,
-      href: "https://github.com/jayden",
+      href: "https://github.com/jhtl99",
       color: "text-gray-800",
       description: "Code repositories"
     },
@@ -64,9 +64,9 @@ const Contact = () => {
             <h2 className="text-4xl lg:text-5xl font-bold text-primary mb-6">
               Let's Connect
             </h2>
-            <p className="text-xl text-gray-medium max-w-3xl mx-auto">
+            {/* <p className="text-xl text-gray-medium max-w-3xl mx-auto">
               Interested in collaboration, have a project idea, or just want to chat about technology and creativity?
-            </p>
+            </p> */}
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12">
@@ -123,15 +123,11 @@ const Contact = () => {
                   <ul className="space-y-3 text-gray-medium">
                     <li className="flex items-center">
                       <div className="w-2 h-2 rounded-full bg-green-500 mr-3"></div>
-                      Summer 2025 Internship Opportunities
+                      Summer 2026 Internship Opportunities
                     </li>
                     <li className="flex items-center">
                       <div className="w-2 h-2 rounded-full bg-secondary mr-3"></div>
                       Collaborative Projects & Research
-                    </li>
-                    <li className="flex items-center">
-                      <div className="w-2 h-2 rounded-full bg-secondary mr-3"></div>
-                      Freelance Development Work
                     </li>
                     <li className="flex items-center">
                       <div className="w-2 h-2 rounded-full bg-secondary mr-3"></div>
@@ -168,14 +164,14 @@ const Contact = () => {
               </div>
 
               {/* Quote */}
-              <div className="p-6 rounded-2xl bg-gradient-to-br from-secondary/10 to-primary/10 border border-secondary/20">
+              {/* <div className="p-6 rounded-2xl bg-gradient-to-br from-secondary/10 to-primary/10 border border-secondary/20">
                 <p className="text-center text-primary font-medium text-lg mb-2">
                   "Let's build something amazing together"
                 </p>
                 <p className="text-center text-gray-medium text-sm">
                   Always excited to connect with fellow creators, innovators, and problem-solvers.
                 </p>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

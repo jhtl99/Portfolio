@@ -37,20 +37,20 @@ const Hero = () => {
                   ECE Student at CMU
                 </p>
                 <p className="animate-fade-in" style={{ animationDelay: '0.6s' }}>
-                  AI Enthusiast | Creative Technologist
+                  ML Researcher | Developer + Musician + Artist
                 </p>
                 <p className="animate-fade-in font-medium text-white" style={{ animationDelay: '0.9s' }}>
-                  Always creating something
+                  Scroll to see more or click below to
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-in" style={{ animationDelay: '1.2s' }}>
-                <Button 
+                {/* <Button 
                   size="lg" 
                   className="bg-white text-primary hover:bg-blue-50 font-semibold px-8"
                   onClick={scrollToAbout}
                 >
                   Explore My Work
-                </Button>
+                </Button> */}
                 <Button 
                   size="lg" 
                   variant="outline"
