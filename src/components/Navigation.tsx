@@ -48,7 +48,7 @@ const Navigation = () => {
               isScrolled ? 'text-primary' : 'text-white'
             }`}
           >
-            Jayden
+            Jayden's Online Portfolio
           </button>
 
           {/* Desktop Navigation */}
@@ -67,7 +67,7 @@ const Navigation = () => {
             <Button
               onClick={() => scrollToSection('#contact')}
               variant={isScrolled ? 'default' : 'outline'}
-              className={isScrolled ? 'bg-secondary hover:bg-secondary/90' : 'border-white text-white hover:bg-white hover:text-primary'}
+              className={isScrolled ? 'bg-secondary hover:bg-secondary/90' : 'border-white text-black hover:bg-white hover:text-primary'}
             >
               Get In Touch
             </Button>

@@ -1,6 +1,7 @@
 import { ChevronDown } from "lucide-react";
 import { Button } from "./ui/button";
 import jaydenHeadshot from "@/assets/jayden-headshot.jpg";
+import AnimatedBackground from "./AnimatedBackground";
 
 const Hero = () => {
   const scrollToAbout = () => {
@@ -9,10 +10,15 @@ const Hero = () => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center hero-gradient overflow-hidden">
-      {/* Background decorative elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 rounded-full bg-white/10 animate-float"></div>
-        <div className="absolute top-60 -left-20 w-60 h-60 rounded-full bg-white/5 animate-float" style={{ animationDelay: '1s' }}></div>
+      {/* Animated Background with Nodes */}
+      <div className="absolute inset-0">
+        <AnimatedBackground 
+          nodeCount={150}
+          maxDistance={300}
+          nodeSpeed={4}
+          mouseRepelDistance={300}
+          mouseRepelStrength={5}
+        />
       </div>
       
       <div className="container mx-auto px-6 relative z-10">
@@ -21,9 +27,9 @@ const Hero = () => {
           <div className="lg:w-1/2 text-center lg:text-left mb-12 lg:mb-0">
             <div className="animate-slide-up">
               <h1 className="text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-                Hi, I'm{" "}
+                Hello! I'm excited to show you{" "}
                 <span className="bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
-                  Jayden
+                  what I've been working on.
                 </span>
               </h1>
               <div className="text-xl lg:text-2xl text-blue-100 mb-8 space-y-2">
@@ -48,7 +54,7 @@ const Hero = () => {
                 <Button 
                   size="lg" 
                   variant="outline"
-                  className="border-white text-white hover:bg-white hover:text-primary font-semibold px-8"
+                  className="border-white text-black hover:bg-white hover:text-primary font-semibold px-8"
                   onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                 >
                   Get In Touch
@@ -65,7 +71,7 @@ const Hero = () => {
                 src={jaydenHeadshot}
                 alt="Jayden - ECE Student at CMU"
                 className="relative w-80 h-80 lg:w-96 lg:h-96 object-cover rounded-3xl shadow-2xl animate-float hover-lift"
-                style={{ animationDelay: '0.5s' }}
+                style={{ animationDelay: '2s' }}
               />
             </div>
           </div>

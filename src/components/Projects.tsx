@@ -2,9 +2,9 @@ import { useState } from "react";
 import { X, ExternalLink, Github, Code, Cpu, Palette } from "lucide-react";
 import { Card, CardContent } from "./ui/card";
 import { Button } from "./ui/button";
-import appDevProject from "@/assets/app-development-project.jpg";
-import computerSystemsProject from "@/assets/computer-systems-research.jpg";
-import digitalArtProject from "@/assets/digital-art-project.jpg";
+import appDevProject from "@/assets/app_image.jpg";
+import computerSystemsProject from "@/assets/hyperparameter_sweep_run3.png";
+import digitalArtProject from "@/assets/art2.png";
 
 interface Project {
   id: string;
@@ -87,7 +87,7 @@ const Projects = () => {
   return (
     <section id="projects" className="py-20 bg-gray-light/30">
       <div className="container mx-auto px-6">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           {/* Header */}
           <div className="text-center mb-16 animate-slide-up">
             <h2 className="text-4xl lg:text-5xl font-bold text-primary mb-6">
