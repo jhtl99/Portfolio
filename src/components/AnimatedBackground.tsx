@@ -11,7 +11,8 @@ interface Node {
 }
 
 interface AnimatedBackgroundProps {
-  nodeCount?: number;
+  nodeCount?: number; // Optional override for fixed node count
+  nodeDensity?: number; // Nodes per 100,000 pixels (default density)
   maxDistance?: number;
   nodeSpeed?: number;
   mouseRepelDistance?: number;
@@ -19,7 +20,8 @@ interface AnimatedBackgroundProps {
 }
 
 const AnimatedBackground: React.FC<AnimatedBackgroundProps> = ({
-  nodeCount = 50,
+  nodeCount,
+  nodeDensity = 5, // Default: 5 nodes per 100,000 pixels
   maxDistance = 150,
   nodeSpeed = 0.5,
   mouseRepelDistance = 100,
@@ -35,9 +37,23 @@ const AnimatedBackground: React.FC<AnimatedBackgroundProps> = ({
   const targetFPS = 60;
   const frameInterval = 1000 / targetFPS;
 
+  // Calculate dynamic node count based on screen area and density
+  const calculateNodeCount = useCallback((width: number, height: number): number => {
+    if (nodeCount !== undefined) {
+      return nodeCount; // Use fixed count if provided
+    }
+    
+    const area = width * height;
+    const calculatedCount = Math.round((area / 100000) * nodeDensity);
+    
+    // Ensure reasonable bounds (minimum 10, maximum 200)
+    return Math.max(10, Math.min(200, calculatedCount));
+  }, [nodeCount, nodeDensity]);
+
   // Initialize nodes
   const initializeNodes = useCallback((width: number, height: number) => {
-    nodesRef.current = Array.from({ length: nodeCount }, () => {
+    const dynamicNodeCount = calculateNodeCount(width, height);
+    nodesRef.current = Array.from({ length: dynamicNodeCount }, () => {
       const vx = (Math.random() - 0.5) * nodeSpeed;
       const vy = (Math.random() - 0.5) * nodeSpeed;
       return {
@@ -50,7 +66,7 @@ const AnimatedBackground: React.FC<AnimatedBackgroundProps> = ({
         radius: Math.random() * 3 + 2,
       };
     });
-  }, [nodeCount, nodeSpeed]);
+  }, [calculateNodeCount, nodeSpeed]);
 
   // Handle mouse movement
   const handleMouseMove = useCallback((event: MouseEvent) => {
